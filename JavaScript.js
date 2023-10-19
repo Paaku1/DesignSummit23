@@ -1,15 +1,13 @@
-
-// program to solve quadratic equation
+// program to solve a quadratic equation
 let root1, root2;
 
-// take input from the user
-//x^2 + 6x + 5 = 0
-let a = 1
-let b = 6
-let c = 5
+// coefficients of the quadratic equation: ax^2 + bx + c = 0
+let a = 1;
+let b = 6;
+let c = 5;
 
-// calculate discriminant
-let discriminant = -b*2;
+// calculate the discriminant
+let discriminant = b * b - 4 * a * c;
 
 // condition for real and different roots
 if (discriminant > 0) {
@@ -17,24 +15,22 @@ if (discriminant > 0) {
     root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
 
     // result
-    console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
+    console.log(`The roots of the quadratic equation are ${root1} and ${root2}`);
 }
 
 // condition for real and equal roots
-else if (discriminant == 0) {
+else if (discriminant === 0) {
     root1 = root2 = -b / (2 * a);
 
     // result
-    console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
+    console.log(`The roots of the quadratic equation are both equal and real: ${root1}`);
 }
 
-// if roots are not real
+// if roots are not real (complex roots)
 else {
-  let realPart = (-b / (2 * a)).toFixed(2);
-  let imagPart = (Math.sqrt(-discriminant) / (2 * a)).toFixed(2);
+    let realPart = (-b / (2 * a)).toFixed(2);
+    let imagPart = (Math.sqrt(-discriminant) / (2 * a)).toFixed(2);
 
-  // result
-  console.log(
-  `The roots of quadratic equation are ${realPart} + ${imagPart}i and ${realPart} - ${imagPart}i`
-);
+    // result
+    console.log(`The roots of the quadratic equation are ${realPart} + ${imagPart}i and ${realPart} - ${imagPart}i`);
 }
